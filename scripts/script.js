@@ -73,6 +73,8 @@ function openPopup(popup) {
 
 function closePopup(popup) {
     popup.classList.remove("popup_open");
+    document.removeEventListener("keyup", handleEscPress);
+    document.removeEventListener("click", closePopupOnRemoteClick); // <-- check the function you not hear anymore
 }
 
 function renderCard(cardEl, container) {
@@ -165,6 +167,7 @@ cardAddForm.addEventListener("submit", function (event) {
   renderCard(cardView, cardListEl);
   closePopup(cardAddPopup)
   cardAddForm.reset();
+  
 });
 
 initialCards.reverse().forEach((cardData) => {
@@ -173,8 +176,6 @@ initialCards.reverse().forEach((cardData) => {
 });
 
 function handleEscPress(e) {
-  e.preventDefault();
-
   if (e.key === "Escape") {
     const openedPopup = document.querySelector(".popup_open");
     closePopup(openedPopup);

@@ -34,11 +34,11 @@
       <div class="popup__content">
         <form class="popup__form popup__form_type_edit" id="edit-profile-form" name="profile-edit">
           <h3 class="popup__title">Edit profile</h3>
-          <input name="name" placeholder="Name" id="owner-name" required minlength="2" maxlength="40" type="text"  class="popup__input popup__input_type_name popup__input-type_error" />
+          <input name="name" placeholder="Name" id="owner-name" required minlength="2" maxlength="40" type="text"  class="popup__input popup__input_type_name popup__input_type_error" />
           <span class="popup__error popup__error_visible" id="owner-name-error"></span>
-          <input name="title" placeholder="About" id="owner-description" required minlength="2" maxlength="200" type="text"  class="popup__input popup__input_type_title popup__input-type_error" />
+          <input name="title" placeholder="About" id="owner-description" required minlength="2" maxlength="200" type="text"  class="popup__input popup__input_type_title popup__input_type_error" />
           <span class="popup__error popup__error_visible" id="owner-description-error"></span>
-          <button class="popup__button popup__button_disabled" disabled type="submit" aria-label="save">Save</button>
+          <button class="popup__button" type="submit" aria-label="save">Save</button>
         </form>
       <button class="popup__close-button" type="button" aria-label="close"></button>
       </div>
@@ -46,11 +46,11 @@
 
     <div class="popup" id="add-popup">
       <div class="popup__content">
-        <form class="popup__form" id="add-card-form">
+        <form class="popup__form" id="add-card-form" novalidate>
           <h3 class="popup__title">New Place</h3>
-          <input name="name" placeholder="Title" id="name" minlength="2" maxlength="40" type="text" class="popup__input popup__input_type_name popup__input-type_error" />
+          <input name="name" placeholder="Title" id="name" minlength="2" maxlength="30"  type="text" class="popup__input popup__input_type_name popup__input_type_error" />
           <span class="popup__error popup__error_visible" id="name-error"></span>
-          <input name="title" placeholder="Image Link" id="title" minlength="2" maxlength="40" type="url"  class="popup__input popup__input_type_title popup__input-type_error" />
+          <input name="title" placeholder="Image Link" id="title" minlength="1" type="url"  class="popup__input popup__input_type_title popup__input_type_error" />
           <span class="popup__error popup__error_visible" id="title-error"></span>
           <button class="popup__button popup__button_disabled" type="submit" disabled aria-label="save">Save</button>
         </form>
