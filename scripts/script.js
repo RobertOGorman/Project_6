@@ -74,7 +74,7 @@ function openPopup(popup) {
 function closePopup(popup) {
     popup.classList.remove("popup_open");
     document.removeEventListener("keyup", handleEscPress);
-    document.removeEventListener("click", closePopupOnRemoteClick); // <-- check the function you not hear anymore
+    document.removeEventListener("click", closePopupOnRemoteClick);
 }
 
 function renderCard(cardEl, container) {
@@ -167,7 +167,7 @@ cardAddForm.addEventListener("submit", function (event) {
   renderCard(cardView, cardListEl);
   closePopup(cardAddPopup)
   cardAddForm.reset();
-  
+  disableAddSubmitButton();
 });
 
 initialCards.reverse().forEach((cardData) => {
@@ -186,4 +186,9 @@ function closePopupOnRemoteClick(evt) {
   if (evt.target.classList.contains("popup")) {
     closePopup(evt.target);
   }
+}
+
+function disableAddSubmitButton() {
+  const submitButton = cardAddForm.querySelector(".popup__button")
+  disableButton(submitButton, config.inactiveButtonClass)
 }
